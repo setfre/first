@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="student.ssm.mapper.TeacherMapper">
+	<resultMap type="student.ssm.pojo.Teacher" id="baseMap">
+
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="sex" column="sex"/>
+		<result property="tel" column="tek"/>
+		<result property="work" column="work"/>
+		<association property="sclass" javaType="Sclass">
+			<id property="id" column="id" javaType="Integer"/>
+			<result property="id" column="id"/>
+			<result property="name" column="name"/>
+			<result property="address" column="address"/>
+		</association>
+		<collection property="teachings" ofType="Teaching" column="teacherId">
+			<id property="id" column="id" javaType="Integer"/>
+			<result property="courseId" column="courseId"/>
+			<result property="sclassId" column="sclassId"/>
+			<result property="time" column="time" javaType="Date"/>
+		</collection>
+	</resultMap>
+
+	<insert id="create" parameterType="Teacher">
+		<selectKey keyProperty="id" order="BEFORE" resultType="Integer">
+			select teacher_seq.nextval from dual
+		</selectKey>
+		insert into teacher (id,name,sex,tel,work)values(#{id},#{name},#{sex},#{tel},#{work})
+	</insert>
+	<delete id="delete" parameterType="Teacher">
+		delete from teacher where id=#{id}
+	</delete>
+	<update id="update" parameterType="Teacher">
+		update teacher
+		<set>
+			<if test="name!=null and name!=''">name=#{name},</if>
+			<if test="sex!=null and sex!=''">sex=#{sex},</if>
+			<if test="tel!=null and tel>0">tel=#{tel},</if>
+			<if test="work!=null and work!=''">work=#{work},</if>
+		</set>
+		where id=#{id}
+	</update>
+	<select id="retrieveAll">
+		select * from teacher
+	</select>
+	<select id="retrieveById" parameterType="Teacher">
+		select * from teacher where id=#{id}
+	</select>
+	<select id="retrieveByManyKey" parameterType="Teacher">
+		select * from teacher
+		<where>
+			<if test="name!=null and name!=''">name=#{name}</if>
+			<if test="sex!=null and sex!=''">and sex=#{sex}</if>
+			<if test="tel!=null and tel>0">and tel=#{tel}</if>
+			<if test="work!=null and work!=''">and work=#{work}</if>
+		</where>
+	</select>
+</mapper>
