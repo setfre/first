@@ -12,8 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import student.ssm.pojo.Pagination;
+import student.ssm.pojo.Sclass;
 import student.ssm.pojo.Student;
 import student.ssm.pojo.Teacher;
 import student.ssm.service.SysParamService;
@@ -32,9 +35,38 @@ public class SysParamController {
 		System.out.println(students);
 		return students;
 	}
+	
 	@RequestMapping("batchInStudent")
 	public void batchInStudent() {
 		sysParamService.batchIn();
+	}
+	
+	@RequestMapping("retrieveAllSclass")
+	@ResponseBody
+	public List<Sclass> retrieveAllSclass() {
+		List<Sclass> sclasses = sysParamService.retrieveAllSclass();
+		System.out.println(sclasses);
+		return sclasses;
+	}
+	
+	@RequestMapping("retrieveAllStudent")
+	@ResponseBody
+	public List<Student> retrieveAllStudent(){
+		return sysParamService.retrieveAllStudent();
+	}
+	
+	@RequestMapping("paginationStudent")
+	@ResponseBody
+	public Pagination<Student> paginationStudent(
+			@RequestParam(value = "index",required = true)Integer currentIndex){
+		return sysParamService.paginationStudent(currentIndex);
+	}
+	
+	@RequestMapping("updateShowSize")
+	@ResponseBody
+	public String updateShowSize(
+			@RequestParam(value = "showSize",required = true)Integer showSize) {
+		return sysParamService.updateShowSize(showSize);
 	}
 	
 	@RequestMapping("createStudent")
@@ -42,6 +74,7 @@ public class SysParamController {
 	public String createStudent(Student student) {
 		return sysParamService.createStudent(student); 
 	}
+	
 	@RequestMapping("createTeacher")
 	@ResponseBody
 	public String createTeacher(Teacher teacher) {

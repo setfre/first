@@ -1,9 +1,14 @@
 package student.ssm.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Result {
+public class Result  implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Integer courseId;
 	private Integer studentId;

@@ -41,7 +41,7 @@
 		</set>
 		where id=#{id}
 	</update>
-	<select id="retrieveAll">
+	<select id="retrieveAll" resultType="Sclass">
 		select * from sclass
 	</select>
 	<select id="retrieveById" parameterType="Sclass">

@@ -1,6 +1,7 @@
 package student.ssm.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BaseMapper<T> {
 
@@ -15,4 +16,6 @@ public interface BaseMapper<T> {
 	public List<T> retrieveById(T bean);
 	
 	public List<T> retrieveByManyKey(T bean);
+	
+	public List<T> pagination(Map<String, Integer> map);
 }

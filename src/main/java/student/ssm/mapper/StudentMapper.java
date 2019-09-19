@@ -10,4 +10,5 @@ public interface StudentMapper extends BaseMapper<Student>{
 
 	List<Student> retrieveAllGrade();
 
+	Integer retrieveSize();
 }

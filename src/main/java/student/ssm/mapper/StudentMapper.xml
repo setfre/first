@@ -40,9 +40,20 @@
 		</set>
 		where id=#{id}
 	</update>
-	<select id="retrieveAll">
+	<select id="retrieveAll" resultType="Student">
 		select * from student
 	</select>
+	<!-- oracle分页 -->
+    <select id="pagination" parameterType="Map" resultType="Student">
+    	select * from student where
+    	<![CDATA[rownum < #{end}]]>
+    	minus  
+    	select * from student where
+    	<![CDATA[rownum < #{start}]]> 
+    </select>
+    <select id="retrieveSize" resultType="Integer">
+    	select count(id) from student
+    </select>
 	<select id="retrieveById" parameterType="Student">
 		select * from student where id=#{id}
 	</select>

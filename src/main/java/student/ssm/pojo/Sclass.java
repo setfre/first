@@ -40,5 +40,10 @@ public class Sclass {
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
+	@Override
+	public String toString() {
+		return "Sclass [id=" + id + ", name=" + name + ", address=" + address + ", teacher=" + teacher + ", students="
+				+ students + "]";
+	}
 	
 }
