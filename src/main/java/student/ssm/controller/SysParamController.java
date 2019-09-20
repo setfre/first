@@ -21,6 +21,9 @@ import student.ssm.pojo.Student;
 import student.ssm.pojo.Teacher;
 import student.ssm.service.SysParamService;
 
+
+//js   confirm()/  location=/
+
 @Controller
 @RequestMapping("sysparam")
 public class SysParamController {

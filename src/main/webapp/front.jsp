@@ -146,121 +146,176 @@
 			}
 	}
 </script>
- 
+
 <body>
 	<div class="container-fluid">
-		<div class="ct">
-			<div id="sidbar" class="sidbar">
-				<div class="sidbar-card">
-					<div class="sidbar-card-header card-header">
-						<a href="#sdbar-card-1" data-toggle="collapse">first</a>
-					</div>
-					<div id="sdbar-card-1" class="sdbar-card-body collapse"  data-parent="#sidbar">
-						<div class="card-body"> 
-							<a href="">first-one</a>
+		<div class="row">
+			<div class="col-sm-12 show-layog">
+				<div class="row">
+					<div class="show-nab">
+						<div class="show-nab-group">
+							<div class="show-nab-logo">
+								<a href="#"><img class="show-nab-img" src="img/p-71979987.jpg"/></a>
+							</div>
 						</div>
-						<div class="card-body">
-							<a href="">first-two</a>
+						<div class="show-nab-group">
+							<div class="show-nab-link">
+								<a href="#">link1</a>
+							</div>
+							<div class="show-nab-link">
+								<a href="#">link2</a>
+							</div>
+							<div class="show-nab-link">
+								<a href="#">link3</a>
+							</div><div class="show-nab-link">
+								<a href="#">link4</a>
+							</div>
+						</div> 
+						<div class="show-nab-active show-nab-group">
+							<div class="show-nab-link">
+								<a href="#">link5</a>/
+							</div>
+							
+							<div class="show-nab-link">
+								<a href="#">link6</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="table-responsive" style="margin-top:40px;"> 
-				<form action="">
-					<div class="form-group table-search">
-						<div class="card bg-primary text-white cells-label">
-							<div class="card-body cell-label">name</div>
-						</div>  
-						<input type="text" name="name" class="form-control cells" />
-					</div> 
-					<div class="form-group table-search">
-						<div class="card bg-primary text-white cells-label">
-							<div class="card-body cell-label">sex</div> 
-						</div> 
-						<select id="select-st-sex" class="form-control cells" name="sex">
-							<option value="男">男</option>
-							<option value="女">女</option>
-						</select>
+					
+					<div class="col-sm-10 show-sider-layog">
+						<div class="show-sider"> 
+							<div id="sidbar" class="sidbar">
+								<div class="sidbar-card show-sider-card">
+									<div class="sidbar-card-header card-header">
+										<a href="#sdbar-card-1" data-toggle="collapse">first</a>
+									</div>
+									<div id="sdbar-card-1" class="sdbar-card-body collapse"  data-parent="#sidbar">
+										<div class="card-body"> 
+											<a href="">first-one</a>
+										</div>
+										<div class="card-body">
+											<a href="">first-two</a>
+										</div>
+									</div>
+									<div class="sidbar-card-header card-header">
+										<a href="#sabar-card-2" data-toggle="collapse">second</a>
+									</div>
+									<div id="sabar-card-2" class="sdbar-card-body collapse"  data-parent="#sidbar">
+										<div class="card-body"> 
+											<a href="">second-one</a>
+										</div>
+										<div class="card-body">
+											<a href="">second-two</a>
+										</div>
+									</div>
+									<div class="sidbar-card-header card-header">
+										<a href="#sabar-card-3" data-toggle="collapse">third</a>
+									</div>
+									<div id="sabar-card-3" class="sdbar-card-body collapse"  data-parent="#sidbar">
+										<div class="card-body"> 
+											<a href="">third-one</a>
+										</div>
+										<div class="card-body">
+											<a href="">third-two</a>
+										</div>
+									</div>
+									<div class="sidbar-card-header card-header">
+										<a href="#sabar-card-4" data-toggle="collapse">four</a>
+									</div>
+									<div class="sidbar-card-header card-header">
+										<a href="#sabar-card-5" data-toggle="collapse">five</a>
+									</div>
+									<div class="sidbar-card-header card-header">
+										<a href="#sabar-card-6" data-toggle="collapse">sex</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="show-context">
+							<div class="show-table">
+								<div class="table-responsive"> 
+									<form action=""> 
+										<div class="form-group table-search">
+											<div class="card bg-primary text-white cells-label">
+												<div class="card-body cell-label">name</div>
+											</div>  
+											<input type="text" name="name" class="form-control cells" />
+										</div> 
+										<div class="form-group table-search">
+											<div class="card bg-primary text-white cells-label">
+												<div class="card-body cell-label">sex</div> 
+											</div> 
+											<select id="select-st-sex" class="form-control cells" name="sex">
+												<option value="男">男</option>
+												<option value="女">女</option>
+											</select>
+										</div>
+										<div class="form-group table-search">
+											<div class="card bg-primary text-white cells-label">
+												<div class="card-body cell-label">sclass</div>
+											</div> 
+											<select id="select-sc-id" class="form-control cells" name="sclassId"></select>
+										</div>
+										<div class="form-group table-search-btn">
+											<button type="button" class="btn btn-primary">查找</button>
+											<button type="reset" class="btn btn-primary">重置</button>
+										</div>
+									</form>
+									<table class="table table-hover table-striped">
+										<thead>  
+											<tr>
+												<th width="75px"><input type='checkbox' onclick="toCheckedRec(this.checked)"/><span id="records-checked">全选</span></th>
+												<th>id</th>
+												<th>name</th>
+												<th>sex</th>
+												<th>age</th>
+												<th>birth</th>
+												<th>operate</th>
+											</tr>
+										</thead>
+										<tbody id="context">
+										</tbody>
+										<tfoot>
+										</tfoot>
+									</table>
+									<div class="table-pagination">
+										<div class="pagination-index">
+											<ul class="pagination" id="pages_index">
+												<li class="page-item"><a class="page-link" href="#" onclick="left() ">&laquo;</a></li>
+												<li class="page-item"><a class="page-link" href="#" onclick="right()">&raquo;</a></li>
+												<li class="page-item disabled">
+													<a class="page-link" href="#">
+														<strong>
+															共<b id="customer_record_size"></b>条记录/ 
+															共<b id="customer_page_size"></b>页
+														</strong>
+													</a>
+												</li>
+											</ul>	
+										</div>
+									</div>
+									<div class="pagination-redirect">
+										<div class="form-group">
+											<select id="pg-record-size" class="form-control cells fm-lg-input" name="recordShowSize">
+												<option value="5">5</option>
+												<option value="10">10</option>
+												<option value="15">15</option>
+											</select>
+											<button class="btn btn-primary  cells fm-lg-input disabled" type="button" onclick="">分页</button>
+											<select id="pg-index-t" class="form-control cells fm-lg-input" name="pageIndex"></select>
+											<button class="btn btn-primary  cells fm-lg-input" type="button" onclick="">跳转</button>
+										</div> 
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="form-group table-search">
-						<div class="card bg-primary text-white cells-label">
-							<div class="card-body cell-label">sclass</div>
-						</div> 
-						<select id="select-sc-id" class="form-control cells" name="sclassId"></select>
-					</div>
-					<div class="form-group table-search-btn">
-						<button type="button" class="btn btn-primary">查找</button>
-						<button type="reset" class="btn btn-primary">重置</button>
-					</div>
-				</form>
-				<table class="table table-hover table-striped">
-					<thead>  
-						<tr>
-							<th width="75px"><input type='checkbox' onclick="toCheckedRec(this.checked)"/><span id="records-checked">全选</span></th>
-							<th>id</th>
-							<th>name</th>
-							<th>sex</th>
-							<th>age</th>
-							<th>birth</th>
-							<th>operate</th>
-						</tr>
-					</thead>
-					<tbody id="context">
-					</tbody>
-					<tfoot>
-					</tfoot>
-				</table>
-				<div class="table-pagination">
-					<div class="pagination-index">
-						<ul class="pagination" id="pages_index">
-							<li class="page-item"><a class="page-link" href="#" onclick="left() ">&laquo;</a></li>
-							<li class="page-item"><a class="page-link" href="#" onclick="right()">&raquo;</a></li>
-							<li class="page-item disabled">
-								<a class="page-link" href="#">
-									<strong>
-										共<b id="customer_record_size"></b>条记录/ 
-										共<b id="customer_page_size"></b>页
-									</strong>
-								</a>
-							</li>
-						</ul>	
-					</div>
-				</div>
-				<div class="pagination-redirect">
-					<div class="form-group">
-						<select id="pg-record-size" class="form-control cells fm-lg-input" name="recordShowSize">
-							<option value="5">5</option>
-							<option value="10">10</option>
-							<option value="15">15</option>
-						</select>
-						<button class="btn btn-primary  cells fm-lg-input disabled" type="button" onclick="">分页</button>
-						<select id="pg-index-t" class="form-control cells fm-lg-input" name="pageIndex"></select>
-						<button class="btn btn-primary  cells fm-lg-input" type="button" onclick="">跳转</button>
-					</div> 
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" id="delete">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<div class="modal-title">
-					</div>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body">
-					<div class="alert alert-danger" style="text-align: center;">
-						<strong>确认删除么</strong>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">确认</button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	
+	
 	<div class="modal fade" id="student">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -292,9 +347,7 @@
 											<label><input type="radio" name="sex" />女</label>
 										</div>
 									</div>
-			
 								</div>
-			
 							</div>
 							<div class="form-group form-cells">
 								<div class="form-cell form-cells-label">
@@ -345,6 +398,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 </body>
 </html>
