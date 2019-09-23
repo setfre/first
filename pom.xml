@@ -178,7 +178,12 @@
     	<artifactId>ojdbc6</artifactId> 
     	<version>10.2.0.1.0</version>
     </dependency>
-
+	<!-- web service jersey https://eclipse-ee4j.github.io/jersey/download.html-->
+	<dependency> 
+		<groupId>org.glassfish.jersey.archetypes</groupId>
+		<artifactId>jersey-quickstart-webapp</artifactId>
+		<version>2.29.1</version>
+	</dependency>
  </dependencies>
   <build>
     <finalName>ssm</finalName>

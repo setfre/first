@@ -150,6 +150,7 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
+			<!-- 顶部栏 -->
 			<div class="col-sm-12 show-layog">
 				<div class="row">
 					<div class="show-nab">
@@ -181,7 +182,7 @@
 							</div>
 						</div>
 					</div>
-					
+					<!-- 侧边栏 -->
 					<div class="col-sm-10 show-sider-layog">
 						<div class="show-sider"> 
 							<div id="sidbar" class="sidbar">
@@ -231,9 +232,11 @@
 								</div>
 							</div>
 						</div>
+						<!-- 表单 -->
 						<div class="show-context">
 							<div class="show-table">
 								<div class="table-responsive"> 
+									<!-- 搜索栏 -->
 									<form action=""> 
 										<div class="form-group table-search">
 											<div class="card bg-primary text-white cells-label">
@@ -261,6 +264,7 @@
 											<button type="reset" class="btn btn-primary">重置</button>
 										</div>
 									</form>
+									<!-- 数据表格 -->
 									<table class="table table-hover table-striped">
 										<thead>  
 											<tr>
@@ -278,6 +282,7 @@
 										<tfoot>
 										</tfoot>
 									</table>
+									<!-- 索引 -->
 									<div class="table-pagination">
 										<div class="pagination-index">
 											<ul class="pagination" id="pages_index">
@@ -315,7 +320,7 @@
 		</div>
 	</div>
 	
-	
+	<!-- 模态框 -->
 	<div class="modal fade" id="student">
 		<div class="modal-dialog">
 			<div class="modal-content">
