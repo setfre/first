@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="student.ssm.mapper.CuserMapper">
+	<insert id="create" parameterType="Cuser">
+		<selectKey keyProperty="id" order="BEFORE" resultType="Integer">
+			select cuser_seq.nextval from dual
+		</selectKey>
+		insert into cuser values(#{id},#{usercode},#{password},#{roleId})
+	</insert>
+	<delete id="delete" parameterType="Cuser">
+		delete from cuser where id=#{id}
+	</delete>
+	<update id="update" parameterType="Cuser">
+		update cuser
+		<set>
+			password=#{password},roleId=#{roleId}
+		</set>
+		where id=#{id}
+	</update>
+	<select id="retrieveAll" resultType="Cuser">
+		select * from cuser
+	</select>
+	<select id="retrieveByUsercode" parameterType="Cuser" resultType="Cuser">
+		select * from cuser where usercode=#{usercode}
+	</select>
+</mapper>

@@ -6,7 +6,7 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 
-
+import wismport.cn.com.webxml.GetMobileCodeInfo;
 import student.ssm.pojo.Student;
 
 /**
@@ -78,7 +78,7 @@ import student.ssm.pojo.Student;
  *  Body-必须的。在body部分，包含要执行的服务器的方法。和发送到服务器的数据。
  *  SOAP作为一个基于xml语言的协议可用于网上传输
  * 
- * soa(service-oriented architecture):面向服务的架构。是一种思想，意思是以组装电脑的方式开发应用
+ * soa(service-oriented architecture):面向服务的架构。是一种思想，意思是以组装电脑的方式开发应用(可拆卸，即插即用)
  * 
  * uddi(Universal Description,Discovery and Integration)统一描述、发现、继承
  * 
@@ -86,9 +86,16 @@ import student.ssm.pojo.Student;
  * 
  * http-get方法
  * 
+ * 
+ * 
  * http-client框架post请求
  * 
  * wsimport
+ * 
+ *  1.   wsimport uri   				在当前目录解析wsdl
+ *  2.   jar -cvf name.jar D:\XXXX    	打包jar文件
+ *  3.   								导入工程目录下使用
+ *  
  * 
  * WSDL解析
  */
@@ -124,6 +131,7 @@ public class Hello {
 		 * address:服务地址
 		 * implementor:服务的实现对象
 		 */
+		GetMobileCodeInfo g = new GetMobileCodeInfo();
 		Endpoint.publish(address, new Hello());
 	}
 }

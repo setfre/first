@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import student.ssm.pojo.Cuser;
 import student.ssm.pojo.Pagination;
 import student.ssm.pojo.Sclass;
 import student.ssm.pojo.Student;
@@ -31,25 +32,21 @@ public class SysParamController {
 	@Autowired
 	private SysParamService sysParamService;
 	
-	@RequestMapping("retrieveAllGrade")
-	@ResponseBody
-	public List<Student> retrieveAllGrade(){
-		List<Student> students = sysParamService.retrieveAllGrade();
-		System.out.println(students);
-		return students;
-	}
-	
 	@RequestMapping("batchInStudent")
 	public void batchInStudent() {
 		sysParamService.batchIn();
 	}
 	
+	@RequestMapping("retrieveAllGrade")
+	@ResponseBody
+	public List<Student> retrieveAllGrade(){
+		return sysParamService.retrieveAllGrade();
+	}
+
 	@RequestMapping("retrieveAllSclass")
 	@ResponseBody
 	public List<Sclass> retrieveAllSclass() {
-		List<Sclass> sclasses = sysParamService.retrieveAllSclass();
-		System.out.println(sclasses);
-		return sclasses;
+		return sysParamService.retrieveAllSclass();
 	}
 	
 	@RequestMapping("retrieveAllStudent")
@@ -84,6 +81,7 @@ public class SysParamController {
 		return sysParamService.createTeacher(teacher);
 	}
 	
+
 	@InitBinder
 	protected void initBinder(HttpServletRequest request,ServletRequestDataBinder binder) throws Exception{
 		/*springmvc接收data必须重写initBinder*/

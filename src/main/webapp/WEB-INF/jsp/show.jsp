@@ -13,17 +13,17 @@
 	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/front-style.css" />
-	<title>Insert title here</title>
-</head> 
-<script> 
+	<link rel="stylesheet" href="../css/front-style.css" />
+	<title>Insert title here</title> 
+</head>
+<script>
 	window.onload = function(){
 		refresh();
 	} 
 	function refresh(){
 		refreshSclass();
 		refreshRecord(1);
-		pageIndex()
+		pageIndex();
 	}
 
 	function refreshShowSize(){
@@ -39,7 +39,7 @@
 			success:function (e){
 				alert("yesy")
 			}
-		});
+		}); 
 	}
 	function refreshRecord(index){
 		$.ajax({
@@ -155,7 +155,7 @@
 					<div class="show-nab">
 						<div class="show-nab-group">
 							<div class="show-nab-logo">
-								<a href="#"><img class="show-nab-img" src="img/p-71979987.jpg"/></a>
+								<a href="<%=basePath%>/pageTo/personInfo.action"><img class="show-nab-img" src="../img/p-71979987.jpg"/></a>
 							</div>
 						</div>
 						<div class="show-nab-group">
